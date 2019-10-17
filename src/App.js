@@ -17,24 +17,8 @@ class App extends React.Component {
       country: undefined,
       sunrise: undefined,
       sunset: undefined,
-      error: undefined
-  }
-
-  fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
-
-
-
-
-  // Show default weather
-  defaultWeather = () => {
-
-    //const api_url = await
-    //fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityDef}&appid=${API_KEY}&units=metric`);
-    //const data = await api_url.json();
-
-    this.setState({
-      cityDefault: data.main
-    });
+      error: undefined,
+      isLoad: "false"
   }
 
   gettingWeather = async (event) => {
@@ -63,7 +47,7 @@ class App extends React.Component {
         country: undefined,
         sunrise: undefined,
         sunset: undefined,
-        error: "Введите название города"
+        error: "Введите название города",
       });
     }
   }
@@ -81,7 +65,7 @@ class App extends React.Component {
               <div className="col-sm-5 weatherHere">
               <Form weatherMethod={this.defaultWeather} />
               </div>
-              <div className="col-sm-5 updateGeo">Обновить геолокацию</div>
+              <div className="col-sm-5 updateGeo"><GeolocationWeather /></div>
             </div>
           </div>
         </div>
