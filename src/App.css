@@ -1,22 +1,36 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+
+body {
+  font-family: "Open Sans", serif;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  height: 80vh;
+  background: #2a6bb1;
+  box-shadow: 0px 2px 80px -20px rgba(0,0,0,0.5);
+  width: 70%;
+  margin: 0 auto;
+}
+
+.firstRow{
+  margin-top: 2%;
+}
+
+.weatherHere{
+
+}
+
+.updateGeo{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+.secondRow{
+  margin-top: 2%;
 }

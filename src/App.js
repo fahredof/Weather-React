@@ -2,12 +2,16 @@ import React from "react";
 import Info from "./components/info";
 import Form from "./components/form";
 import Weather from "./components/weather";
+import GeolocationWeather from "./components/geoWeather/geolocationWeather.js";
+
 
 const API_KEY = "f77919380546d1f6ef8015d53089ba0e";
+const cityDef = "Ufa";
 
 class App extends React.Component {
 
   state = {
+      cityDefault: undefined,
       temp: undefined,
       city: undefined,
       country: undefined,
@@ -16,11 +20,29 @@ class App extends React.Component {
       error: undefined
   }
 
+  fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
+
+
+
+
+  // Show default weather
+  defaultWeather = () => {
+
+    //const api_url = await
+    //fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityDef}&appid=${API_KEY}&units=metric`);
+    //const data = await api_url.json();
+
+    this.setState({
+      cityDefault: data.main
+    });
+  }
+
   gettingWeather = async (event) => {
     event.preventDefault();
     let city = event.target.elements.city.value;
 
     if (city) {
+      // Api
       const api_url = await
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
       const data = await api_url.json();
@@ -48,17 +70,21 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
-        <Info />
-        <Form weatherMethod={this.gettingWeather} />
-        <Weather
-          temp = {this.state.temp}
-          city = {this.state.city}
-          country = {this.state.country}
-          sunrise = {this.state.sunrise}
-          sunset = {this.state.sunset}
-          error = {this.state.error}
-        />
+      <div className="wrapper">
+        <div className="main">
+          <div className="container">
+            <div className="row firstRow">
+              <div className="col-sm-3 weatherHere">Погода Здесь</div>
+              <div className="col-sm-6 updateGeo">Обновить геолокацию</div>
+            </div>
+            <div className="row secondRow">
+              <div className="col-sm-5 weatherHere">
+              <Form weatherMethod={this.defaultWeather} />
+              </div>
+              <div className="col-sm-5 updateGeo">Обновить геолокацию</div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
