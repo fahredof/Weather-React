@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+
+.body {
+  text-align: center;
+  margin-top: 2px;
+
+  display: grid;
+  grid-template-areas:
+  "all all all"
+  "def det det"
+  "one two three";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 24fr 24fr;
+  grid-gap: 40px;
+}
+
+#details {
+  grid-area: det;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#cityOne {
+  grid-area: one;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15%;
+}
+
+#cityTwo {
+  grid-area: two;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15%;
+}
+
+#cityThree {
+  grid-area: three;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15%;
+}

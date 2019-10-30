@@ -1,9 +1,7 @@
 import React from "react";
-import Info from "./components/info";
-import Form from "./components/form";
-import Weather from "./components/weather";
-import GeolocationWeather from "./components/geoWeather/geolocationWeather.js";
-
+import "./App.css"
+import Header from "../Header/Header";
+import DefaultWeather from "../DefaultWeather/DefaultWeather"
 
 const API_KEY = "f77919380546d1f6ef8015d53089ba0e";
 const cityDef = "Ufa";
@@ -54,22 +52,14 @@ class App extends React.Component {
 
   render() {
     return(
-      <div className="wrapper">
-        <div className="main">
-          <div className="container">
-            <div className="row firstRow">
-              <div className="col-sm-3 weatherHere">Погода Здесь</div>
-              <div className="col-sm-6 updateGeo">Обновить геолокацию</div>
-            </div>
-            <div className="row secondRow">
-              <div className="col-sm-5 weatherHere">
-              <Form weatherMethod={this.defaultWeather} />
-              </div>
-              <div className="col-sm-5 updateGeo"><GeolocationWeather /></div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="body">
+      <Header/>
+      <DefaultWeather/> 
+      <div id="details">Window: 5 m/s</div>
+      <div id="cityOne">Ufa</div>
+      <div id="cityTwo">Tomsk</div>
+      <div id="cityThree">Kazan</div>
+    </div>
     );
   }
 }
