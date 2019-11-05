@@ -2,19 +2,21 @@ import React from "react";
 import "./DefaultWeather.css"
 
 const API_KEY = "f77919380546d1f6ef8015d53089ba0e";
+let cityDefault = "Ufa";
+let data;
 
-const DefaultWeather = () => {
-
-  const api_url = await
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=${API_KEY}&units=metric`);
-  const data = await api_url.json();
+const DefaultWeather = (props) => {
 
   return(
     <div className="def">
-      <p>a</p>
-      <p>b</p>
-      <p>c</p>
+
+      <p>{props.city}</p>
+      <p>{props.country}</p>
+      <p>{props.temp}</p>
     </div>
-)}
+  )
+}
+
+
 
 export default DefaultWeather;

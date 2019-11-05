@@ -23,7 +23,7 @@ const GeolocationWeather = () => {
   getCoordinates();
   return(
     <div>
-      <p>{data}</p>
+      <p>SLSLSLSLLS</p>
     </div>
 )}
 
