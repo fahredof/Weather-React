@@ -7,7 +7,7 @@ const Header = (props) => {
     <div className="header">
       <img src={icon} alt="icon"/>
       <button>Update geolocation</button>
-      <form onClick={props.weatherMethod}>
+      <form onClick={props.updateGeolocation}>
        <button>Получить погоду</button>
       </form>
     </div>

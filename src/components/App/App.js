@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import DefaultWeather from "../DefaultWeather/DefaultWeather"
 import GeolocationWeather from "../GeolocationWeather/GeolocationWeather.js";
 import {getWeatherByCity, getWeatherByCoordinates} from "../../functions/getWeather.js";
+import {getCoordinates} from "../../functions/getCoordinates.js";
 
 const API_KEY = "f77919380546d1f6ef8015d53089ba0e";
 const CITY_DEFAULT = "New York";
@@ -16,23 +17,35 @@ class App extends React.Component {
       temp: undefined
   }
 
-  getDefaultWeather = async (event) => {
-    event.preventDefault();
-    let data = await getWeatherByCity(API_KEY, CITY_DEFAULT);
-  	//console.log(data);
-
+  setData = (data) =>
     this.setState({
       city: data.name,
       country: data.sys.country,
       temp: data.main.temp
     });
+
+  getDefaultWeather = async () => {
+    let data = await getWeatherByCity(API_KEY, CITY_DEFAULT);
+    this.setData(data);
   }
+
+  showCoordinate = async (position) => {
+  	let latCor = position.coords.latitude;
+  	let lonCor = position.coords.longitude;
+    let data = await getWeatherByCoordinates(API_KEY, latCor, lonCor);
+    this.setData(data);
+  }
+
+  getWeatherByCoor = (event) => {
+    event.preventDefault();
+    getCoordinates(this.showCoordinate, this.getDefaultWeather);
+  }
+
 
   render() {
     return(
     <div className="body">
-      <p></p>
-      <Header weatherMethod={this.getDefaultWeather}/>
+      <Header updateGeolocation={this.getWeatherByCoor}/>
       <DefaultWeather
       city = {this.state.city}
       country = {this.state.country}

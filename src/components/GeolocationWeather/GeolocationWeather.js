@@ -20,6 +20,7 @@ const GeolocationWeather = () => {
     let lonCor = position.coords.longitude;
     getGeolocationWeather(latCor, lonCor);
   }
+
   getCoordinates();
   return(
     <div>
