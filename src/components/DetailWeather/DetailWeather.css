@@ -1,0 +1,4 @@
+.details {
+  grid-area: det;
+  background: rgba(0, 0, 0, 0.1);
+}

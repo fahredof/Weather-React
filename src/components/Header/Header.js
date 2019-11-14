@@ -3,12 +3,17 @@ import "./Header.css";
 import icon from "./svg/icon.svg"
 
 const Header = (props) => {
+
+  const onClick = (event) => {
+    event.preventDefault();
+    props.updateGeolocation();
+  }
+
   return (
     <div className="header">
-      <img src={icon} alt="icon"/>
-      <button>Update geolocation</button>
-      <form onClick={props.updateGeolocation}>
-       <button>Получить погоду</button>
+      <form onClick={onClick}>
+        <img src={icon} alt="icon"/>
+        <button>Update geolocation</button>
       </form>
     </div>
   );

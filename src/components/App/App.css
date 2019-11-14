@@ -14,11 +14,6 @@
   grid-gap: 40px;
 }
 
-#details {
-  grid-area: det;
-  background: rgba(0, 0, 0, 0.1);
-}
-
 #cityOne {
   grid-area: one;
   background: rgba(0, 0, 0, 0.1);
