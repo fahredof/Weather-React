@@ -2,3 +2,9 @@
   grid-area: def;
   background: rgba(0, 0, 0, 0.1);
 }
+
+.def div {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}

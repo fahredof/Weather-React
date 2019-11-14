@@ -11,18 +11,19 @@ const CITY_DEFAULT = "New York";
 
 class App extends React.Component {
 
-  state = {
+  state = {};
+
+  getEmptyState = () => ({
       city: undefined,
       temp: undefined,
       image: undefined,
-
       wind: undefined,
       overcast: undefined,
       pressure: undefined,
       humidity: undefined,
       coordinatesLat: undefined,
       coordinatesLon: undefined
-  }
+  })
 
   setData = (data) =>
     this.setState({
@@ -54,10 +55,12 @@ class App extends React.Component {
   }
 
   getWeatherByCoor = () => {
+    this.setState(this.getEmptyState());
     getCoordinates(this.showCoordinate, this.getDefaultWeather);
   }
 
   componentDidMount() {
+    this.setState(this.getEmptyState());
     this.getWeatherByCoor();
   }
 

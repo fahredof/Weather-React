@@ -1,10 +1,11 @@
-import React from "react";
+import React from "react"
 import "./DetailWeather.css"
+import Spinner from "../Spinner/Spinner"
 
 const DetailWeather = (props) => {
   return(
     <div className="details">
-    { props.wind &&
+    { props.wind ?
       <div>
       <p>Wind {props.wind} m/s</p>
       <p>Overcast {props.overcast}</p>
@@ -12,6 +13,7 @@ const DetailWeather = (props) => {
       <p>Humidity {props.humidity} %</p>
       <p>Coordinates [{props.coordinatesLat},{props.coordinatesLon}]</p>
       </div>
+      : <Spinner/>
     }
     </div>
   )
