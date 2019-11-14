@@ -8,26 +8,8 @@
   grid-template-areas:
   "all all all"
   "def det det"
-  "one two three";
+  "fav1 fav2 fav3";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2fr 24fr 24fr;
   grid-gap: 40px;
-}
-
-#cityOne {
-  grid-area: one;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 15%;
-}
-
-#cityTwo {
-  grid-area: two;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 15%;
-}
-
-#cityThree {
-  grid-area: three;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 15%;
 }
