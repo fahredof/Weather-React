@@ -17,18 +17,23 @@ class App extends React.Component {
     mainCity: {}
   };
 
-  parseData = (data) => ({
-    city: data.name,
-    country: data.sys.country,
-    temp: data.main.temp,
-    image: data.weather[0].icon,
-    wind: data.wind.speed,
-    overcast: data.weather[0].description,
-    pressure: data.main.pressure,
-    humidity: data.main.humidity,
-    coordinatesLat: data.coord.lat,
-    coordinatesLon: data.coord.lon
-  })
+  parseData = (data) => {
+    if (!data.error)
+      return ({
+        city: data.name,
+        country: data.sys.country,
+        temp: data.main.temp,
+        image: data.weather[0].icon,
+        wind: data.wind.speed,
+        overcast: data.weather[0].description,
+        pressure: data.main.pressure,
+        humidity: data.main.humidity,
+        coordinatesLat: data.coord.lat,
+        coordinatesLon: data.coord.lon
+      })
+    else
+      return({error: data.error})
+  }
 
   addCity = (id, data) =>{
     const newState = {...this.state};
@@ -71,7 +76,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log(JSON.parse(localStorage.getItem('state')));
     this.getWeatherByCoor();
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('state', JSON.stringify({
+      cities: [
+        this.state.cities[0].city,
+        this.state.cities[1].city,
+        this.state.cities[2].city
+      ]
+    }));
   }
 // New code with Redux
 

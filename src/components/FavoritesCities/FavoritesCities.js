@@ -16,7 +16,8 @@ const FavoritesCities = ({id, cityData, getWeather, deleteCity}) => {
       pressure,
       humidity,
       coordinatesLat,
-      coordinatesLon
+      coordinatesLon,
+      error
   } = cityData ? cityData : {};
 
   const onClickAddButton = () => {
@@ -51,15 +52,19 @@ const FavoritesCities = ({id, cityData, getWeather, deleteCity}) => {
         )
       case 'List':
         return(
-          <div id="list">
-            <div>{city}</div>
-            <div>{temp}</div>
-            <div>{wind}</div>
-            <div>{overcast}</div>
-            <div>{humidity}</div>
-            <div>{pressure}</div>
-            <img src={crossButton} alt="" onClick={onClickDelete}/>
-          </div>
+          JSON.stringify(cityData) !== '{}' ?
+            !error ?
+            <div id="list">
+              <div>{city}</div>
+              <div>{temp}</div>
+              <div>{wind}</div>
+              <div>{overcast}</div>
+              <div>{humidity}</div>
+              <div>{pressure}</div>
+              <img src={crossButton} alt="" onClick={onClickDelete}/>
+            </div>
+            : <div>{error}</div>
+          : <Spinner/>
         )
         default :
           return(
