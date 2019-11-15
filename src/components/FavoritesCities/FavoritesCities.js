@@ -69,7 +69,13 @@ const FavoritesCities = ({id, cityData, getWeather, deleteCity}) => {
               <img src={crossButton} alt="" onClick={onClickDelete}/>
               </div>
             </div>
-            : <div>{error}</div>
+            : <div id="list">
+            <div className="wind">{error}</div>
+            <div className="crossButton">
+            <img src={crossButton} alt="" onClick={onClickDelete}/>
+            </div>
+            </div>
+
           : <Spinner/>
         )
         default :
