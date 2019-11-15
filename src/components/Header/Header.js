@@ -13,7 +13,6 @@ const Header = (props) => {
     <div className="header">
       <form onClick={onClick}>
         <img src={icon} alt="icon"/>
-        <button>Update geolocation</button>
       </form>
     </div>
   );

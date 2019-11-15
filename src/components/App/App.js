@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React from "react"
 import "./App.css"
 import Header from "../Header/Header"
 import DefaultWeather from "../DefaultWeather/DefaultWeather"
@@ -72,6 +72,10 @@ class App extends React.Component {
   }
 
   getWeatherByCoor = () => {
+    this.setState({
+      ...this.state,
+      mainCity: {}
+    });
     getCoordinates(this.showCoordinate, this.getDefaultWeather);
   }
 
@@ -89,20 +93,15 @@ class App extends React.Component {
       ]
     }));
   }
-// New code with Redux
-
-
-
-
 
   render() {
     return(
     <div className="body">
       <Header updateGeolocation={this.getWeatherByCoor}/>
       <DefaultWeather
-      city = {this.state.mainCity.city}
-      temp = {this.state.mainCity.temp}
-      image = {this.state.mainCity.image}
+        city = {this.state.mainCity.city}
+        temp = {this.state.mainCity.temp}
+        image = {this.state.mainCity.image}
       />
       <DetailWeather
         wind = {this.state.mainCity.wind}

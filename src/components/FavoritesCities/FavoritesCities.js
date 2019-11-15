@@ -55,13 +55,19 @@ const FavoritesCities = ({id, cityData, getWeather, deleteCity}) => {
           JSON.stringify(cityData) !== '{}' ?
             !error ?
             <div id="list">
-              <div>{city}</div>
-              <div>{temp}</div>
-              <div>{wind}</div>
-              <div>{overcast}</div>
-              <div>{humidity}</div>
-              <div>{pressure}</div>
+              <div className="city">{city}</div>
+              <div className="temp">{(temp - 273.15).toFixed(0)}°C</div>
+              <div className="image">
+              <img src={"http://openweathermap.org/img/wn/" + image + "@2x.png"} alt=""/>
+              </div>
+              <div className="wind">Wind {wind} m/s</div>
+              <div className="overcast">{overcast}</div>
+              <div className="pressure">Pressure {pressure} hpa</div>
+              <div className="humidity">Humidity {humidity} %</div>
+              <div className="coordinates">Coordinates [{coordinatesLat},{coordinatesLon}]</div>
+              <div className="crossButton">
               <img src={crossButton} alt="" onClick={onClickDelete}/>
+              </div>
             </div>
             : <div>{error}</div>
           : <Spinner/>

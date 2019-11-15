@@ -1,4 +1,5 @@
 .header {
   grid-area: all;
-  background: rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-left: 10px;
 }
