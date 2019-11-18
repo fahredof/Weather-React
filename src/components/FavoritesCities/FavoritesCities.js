@@ -58,7 +58,7 @@ const FavoritesCities = ({id, cityData, getWeather, deleteCity}) => {
               <div className="city">{city}</div>
               <div className="temp">{(temp - 273.15).toFixed(0)}°C</div>
               <div className="image">
-              <img src={"http://openweathermap.org/img/wn/" + image + "@2x.png"} alt=""/>
+              <img src={"https://openweathermap.org/img/wn/" + image + "@2x.png"} alt=""/>
               </div>
               <div className="wind">Wind {wind} m/s</div>
               <div className="overcast">{overcast}</div>
