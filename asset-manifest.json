@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/weather-react/static/css/main.dea93199.chunk.css",
+    "main.js": "/weather-react/static/js/main.bc6ffaf7.chunk.js",
+    "main.js.map": "/weather-react/static/js/main.bc6ffaf7.chunk.js.map",
+    "runtime-main.js": "/weather-react/static/js/runtime-main.eea62777.js",
+    "runtime-main.js.map": "/weather-react/static/js/runtime-main.eea62777.js.map",
+    "static/js/2.0636f0ee.chunk.js": "/weather-react/static/js/2.0636f0ee.chunk.js",
+    "static/js/2.0636f0ee.chunk.js.map": "/weather-react/static/js/2.0636f0ee.chunk.js.map",
+    "index.html": "/weather-react/index.html",
+    "precache-manifest.7004d56bcb9c598dca8388f116547224.js": "/weather-react/precache-manifest.7004d56bcb9c598dca8388f116547224.js",
+    "service-worker.js": "/weather-react/service-worker.js",
+    "static/css/main.dea93199.chunk.css.map": "/weather-react/static/css/main.dea93199.chunk.css.map",
+    "static/media/addButton.svg": "/weather-react/static/media/addButton.8e1d6ae8.svg",
+    "static/media/index.css": "/weather-react/static/media/backImg.ff74bc44.jpg",
+    "static/media/crossButton.svg": "/weather-react/static/media/crossButton.d5cb98e4.svg",
+    "static/media/icon.svg": "/weather-react/static/media/icon.50e1ca37.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eea62777.js",
+    "static/js/2.0636f0ee.chunk.js",
+    "static/css/main.dea93199.chunk.css",
+    "static/js/main.bc6ffaf7.chunk.js"
+  ]
+}
