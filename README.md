@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[see website](https://fahredof.github.io/weather-react/)
 
 ## Available Scripts
 

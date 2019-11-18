@@ -2,7 +2,7 @@
   "name": "weather-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fahredof.github.io/weather-react",
+  "homepage": "https://fahredof.github.io/weather-react/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.1.1",
