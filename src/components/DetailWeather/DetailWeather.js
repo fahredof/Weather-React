@@ -1,22 +1,21 @@
 import React from "react"
 import "./DetailWeather.css"
-import Spinner from "../Spinner/Spinner"
+import Spisok from "../Spisok/Spisok";
 
-const DetailWeather = (props) => {
-  return(
-    <div className="details">
-    { props.wind ?
+const DetailWeather = () => {
+  const elements = () => {
+    return (
       <div>
-        <p>Wind {props.wind} m/s</p>
-        <p>Overcast {props.overcast}</p>
-        <p>Pressure {props.pressure} hpa</p>
-        <p>Humidity {props.humidity} %</p>
-        <p>Coordinates [{props.coordinatesLat},{props.coordinatesLon}]</p>
+        <Spisok />
       </div>
-      : <Spinner/>
-    }
+    );
+  }
+
+  return (
+    <div className="details">
+      {elements}
     </div>
-  )
+  );
 }
 
 export default DetailWeather;

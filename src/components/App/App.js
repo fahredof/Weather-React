@@ -6,6 +6,7 @@ import DetailWeather from "../DetailWeather/DetailWeather"
 import FavoritesCities from "../FavoritesCities/FavoritesCities"
 import {getWeatherByCity, getWeatherByCoordinates} from "../../functions/getWeather.js"
 import {getCoordinates} from "../../functions/getCoordinates.js"
+import Spisok from "../Spisok/Spisok"
 
 const API_KEY = "f77919380546d1f6ef8015d53089ba0e";
 const CITY_DEFAULT = "New York";
@@ -103,14 +104,7 @@ class App extends React.Component {
         temp = {this.state.mainCity.temp}
         image = {this.state.mainCity.image}
       />
-      <DetailWeather
-        wind = {this.state.mainCity.wind}
-        overcast = {this.state.mainCity.overcast}
-        pressure = {this.state.mainCity.pressure}
-        humidity = {this.state.mainCity.humidity}
-        coordinatesLat = {this.state.mainCity.coordinatesLat}
-        coordinatesLon = {this.state.mainCity.coordinatesLon}
-      />
+      <DetailWeather />
       {this.state.cities.map((city, id) => (<FavoritesCities
         id={id + 1}
         key={id}
@@ -119,6 +113,14 @@ class App extends React.Component {
         deleteCity={this.deleteCity}
       />
       ))}
+      <Spisok
+      wind = {this.state.mainCity.wind}
+      overcast = {this.state.mainCity.overcast}
+      pressure = {this.state.mainCity.pressure}
+      humidity = {this.state.mainCity.humidity}
+      coordinatesLat = {this.state.mainCity.coordinatesLat}
+      coordinatesLon = {this.state.mainCity.coordinatesLon}
+      />
     </div>
     );
   }
